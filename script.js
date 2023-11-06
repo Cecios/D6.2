@@ -86,8 +86,31 @@ const jobs = [
   ]
   const getLocation = document.querySelector("#location")
   const getLavoro = document.querySelector("#lavoro")
-  const getDati = function(getEvent){
-    console.log(getEvent);
+
+//   for (let i = 0; i < jobs.length; i++) {
+//     let testo = jobs[i].lavoro.toLowerCase()
+//     console.log(testo);
+//  }
+//   for (let i = 0; i < jobs.length; i++) {
+//     let testo = jobs[i].location.toLowerCase()
+//     console.log(testo);
+// }
+
+  const getInput = function(getEvent){
+    let input = (getEvent.target.value);
+    for (let i = 0; i < jobs.length; i++) {
+      // console.log(jobs[i].location);
+      // console.log(input);
+      if (jobs[i].location === input) {
+        console.log("miao");
+      }
+      else{
+        console.log("bau");
+      }
+    }
   }
-  getLocation.onchange = getDati
-  getLavoro.onchange = getDati
+  getLocation.addEventListener("change",getInput)
+
+  
+ // getLocation.onchange = getInput
+  getLavoro.onchange = getInput
